@@ -1,0 +1,9 @@
+{
+    "type": "ftp",
+    "title": "Depositphotos FTP Configuration",
+    "host": "ftp.depositphotos.com",
+    "content": {
+        "username": "your_username",
+        "password": "your_password"
+    }
+}
