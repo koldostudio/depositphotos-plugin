@@ -1,1 +1,39 @@
-
+{
+    "name": "depositphotos",
+    "title": {
+        "en": "Depositphotos",
+        "ru": "Depositphotos"
+    },
+    "description": {
+        "en": "Upload and submit files to Depositphotos stock photography platform",
+        "ru": "Загрузка и отправка файлов на платформу Depositphotos"
+    },
+    "url": "https://depositphotos.com",
+    "ftpEnabled": true,
+    "ftp": {
+        "host": "ftp.depositphotos.com",
+        "port": 21,
+        "secure": false,
+        "passive": true,
+        "path": "/upload"
+    },
+    "connection": {
+        "type": "browser",
+        "loginUrl": "https://depositphotos.com/login.html",
+        "checkAuthUrl": "https://depositphotos.com/files/unfinished/page1.html"
+    },
+    "metadata": {
+        "titleRequired": true,
+        "descriptionRequired": true,
+        "minKeywords": 5,
+        "maxKeywords": 50,
+        "modelReleasesSupported": true,
+        "propertyReleasesSupported": true
+    },
+    "assetTypes": [
+        "photo",
+        "illustration", 
+        "vector",
+        "video"
+    ]
+}
