@@ -1,1 +1,16 @@
-
+{
+    "modelGender": {
+        "MALE": "male",
+        "FEMALE": "female",
+        "OTHER": "other"
+    },
+    "modelEthnicity": {
+        "ASIAN": "asian",
+        "AFRICAN": "african",
+        "CAUCASIAN": "caucasian",
+        "HISPANIC": "latino",
+        "INDIAN": "indian",
+        "MIDDLE_EASTERN": "middle_eastern",
+        "OTHER": "other"
+    }
+}

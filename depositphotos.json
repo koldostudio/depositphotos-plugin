@@ -1,1 +1,43 @@
-
+{
+    "type": "submit",
+    "title": "Depositphotos Plugin",
+    "name": "depositphotos",
+    "description": "Automate your Depositphotos submissions.",
+    "content": {
+        "destinationName": "Depositphotos",
+        "properties": [
+            {
+                "name": "useFTP",
+                "type": "boolean",
+                "default": false,
+                "title": "Use FTP for uploading?"
+            }
+        ],
+        "process": {
+            "title": "Submit to Depositphotos",
+            "assetTypes": ["photo", "vector", "video"],
+            "actions": [
+                {
+                    "type": "authenticate",
+                    "title": "Authenticate User",
+                    "properties": [/* Auth data */]
+                },
+                {
+                    "type": "check",
+                    "title": "Validate Files",
+                    "properties": []
+                },
+                {
+                    "type": "upload",
+                    "title": "Upload Files",
+                    "properties": []
+                },
+                {
+                    "type": "finalize",
+                    "title": "Finalize Submission",
+                    "properties": []
+                }
+            ]
+        }
+    }
+}

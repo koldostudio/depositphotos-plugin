@@ -1,1 +1,18 @@
-
+{
+    "name": "depositphotos",
+    "title": "Depositphotos Submission Plugin",
+    "version": "10.1.1",
+    "api": "2.9.0",
+    "type": "submit",
+    "authors": "koldostudio",
+    "tags": ["submit", "depositphotos"],
+    "description": {
+        "en": "Automated Depositphotos Submission",
+        "ru": "Автоматическая отправка в Depositphotos"
+    },
+    "content": [
+        { "@jsonfile": "depositphotos.json" }
+    ],
+    "dependencies": [],
+    "icon": { "@urlfile": "icon.png" }
+}
