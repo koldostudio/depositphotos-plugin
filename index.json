@@ -1,1 +1,18 @@
-
+{
+    "name": "depositphotos",
+    "title": "Depositphotos Surgical Batch",
+    "version": "10.1.0",
+    "api": "2.9.0",
+    "type": "submit",
+    "authors": "koldostudio",
+    "tags": ["submit"],
+    "description": {
+        "en": "Process ONLY uploaded files",
+        "ru": "Обработка ТОЛЬКО загруженных файлов"
+    },
+    "content": [
+        { "@jsonfile": "depositphotos.json" },
+        { "@jsonfile": "destination.json" }
+    ],
+    "icon": { "@urlfile": "icon.png" }
+}
