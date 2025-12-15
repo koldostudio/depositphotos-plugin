@@ -1,1 +1,161 @@
-
+{
+    "type": "submit",
+    "title": "Depositphotos",
+    "name": "depositphotos",
+    "description": {
+        "@t": "description"
+    },
+    "content": {
+        "destinationName": "depositphotos",
+        "properties": [
+            {
+                "name": "clickSubmit",
+                "type": "boolean",
+                "default": true,
+                "title": {
+                    "@t": "Click the submit button to complete the process."
+                }
+            },
+            {
+                "name": "uploadViaFTP",
+                "type": "boolean",
+                "title": {
+                    "@t": "Use FTP for uploading."
+                },
+                "default": false
+            }
+        ],
+        "buttons": [],
+        "process": {
+            "title": {
+                "@t": "Submit to Depositphotos"
+            },
+            "icon": {
+                "@urlfile": "icon.png"
+            },
+            "assetTypes": [
+                "photo",
+                "illustration",
+                "vector",
+                "video"
+            ],
+            "actions": [
+                {
+                    "name": "checkMetadata",
+                    "type": "metadataFilter",
+                    "args": {
+                        "filter": [
+                            "{meta.title}",
+                            "{meta.description}",
+                            "{len(meta.keywords) >= 5}"
+                        ],
+                        "failMessage": [
+                            {
+                                "@t": "Title is required"
+                            },
+                            {
+                                "@t": "Description is required."
+                            },
+                            {
+                                "@t": "At least 5 keywords are required."
+                            }
+                        ]
+                    },
+                    "pins": {
+                        "next": "authCheck",
+                        "fail": "@fail"
+                    }
+                },
+                {
+                    "name": "authCheck",
+                    "type": "browserSubmit",
+                    "title": {
+                        "@t": "Authentication"
+                    },
+                    "args": {
+                        "destination": "depositphotos",
+                        "connection": "depositphotos",
+                        "targetPage": "https://depositphotos.com/files/unfinished/page1.html",
+                        "submitCode": {
+                            "@textfile": "depositphotos_check_auth.js"
+                        },
+                        "marker": null
+                    },
+                    "pins": {
+                        "fail": "@fail",
+                        "next": "uploadCheck",
+                        "unauthorized": "auth",
+                        "notfound": "auth"
+                    }
+                },
+                {
+                    "name": "auth",
+                    "type": "browserAuth",
+                    "title": {
+                        "@t": "Authorization"
+                    },
+                    "args": {
+                        "targetPage": "https://depositphotos.com/login.html",
+                        "loginPage": "https://depositphotos.com/login.html",
+                        "destination": "depositphotos",
+                        "forceLogin": true
+                    },
+                    "pins": {
+                        "cancel": "@cancel",
+                        "next": "uploadCheck"
+                    }
+                },
+                {
+                    "name": "uploadCheck",
+                    "type": "uploadCheck",
+                    "title": {
+                        "@t": "Upload Check"
+                    },
+                    "args": {
+                        "destination": "depositphotos"
+                    },
+                    "pins": {
+                        "next": "upload",
+                        "skip": "batch"
+                    }
+                },
+                {
+                    "name": "upload",
+                    "type": "upload",
+                    "title": {
+                        "@t": "Uploading"
+                    },
+                    "args": {
+                        "skipAlreadyUploaded": true,
+                        "connection": "depositphotos"
+                    },
+                    "pins": {
+                        "fail": "@fail",
+                        "cancel": "@cancel",
+                        "next": "submit"
+                    }
+                },
+                {
+                    "name": "submit",
+                    "type": "browserSubmit",
+                    "title": {
+                        "@t": "Submit Files"
+                    },
+                    "args": {
+                        "destination": "depositphotos",
+                        "connection": "depositphotos",
+                        "targetPage": "https://depositphotos.com/files/unfinished/page1.html",
+                        "submitCode": {
+                            "@textfile": "depositphotos_submit.js"
+                        }
+                    },
+                    "pins": {
+                        "fail": "@fail",
+                        "notfound": "@fail",
+                        "unauthorized": "auth"
+                    }
+                }
+            ]
+        }
+    }
+}

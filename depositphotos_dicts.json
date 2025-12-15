@@ -1,1 +1,27 @@
-
+{
+    "modelGender": {
+        "MALE": "male",
+        "FEMALE": "female",
+        "OTHER": "other"
+    },
+    "modelEthnicity": {
+        "ASIAN": "asian",
+        "AFRICAN": "african",
+        "CAUCASIAN": "caucasian",
+        "LATIN": "latin",
+        "INDIAN": "indian",
+        "MIDDLE_EASTERN": "middle_eastern",
+        "MIXED": "mixed",
+        "OTHER": "other"
+    },
+    "categories": {
+        "abstract": "Abstract",
+        "nature": "Nature",
+        "technology": "Technology"
+    },
+    "messages": {
+        "titleNotSet": "Title is required.",
+        "descriptionNotSet": "Description is required.",
+        "keywordsTooFew": "At least 5 keywords are required."
+    }
+}
