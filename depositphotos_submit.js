@@ -114,7 +114,9 @@ async function submitAsset(asset, index) {
         await sleep(500);
         
         // Check if clickSubmit option is enabled
-        const clickSubmit = context.properties && context.properties.clickSubmit !== false;
+        const clickSubmit = (typeof context !== 'undefined' && context.properties) 
+            ? context.properties.clickSubmit !== false 
+            : true;
         
         if (clickSubmit) {
             // Find and click the submit/save button
@@ -166,7 +168,9 @@ async function runPlugin() {
         return;
     }
     
-    const assets = window.assets || ImStocker.getSelectedFiles();
+    const assets = (typeof ImStocker !== 'undefined' && ImStocker.getSelectedFiles) 
+        ? ImStocker.getSelectedFiles() 
+        : (window.assets || []);
     
     if (!assets || assets.length === 0) {
         console.error('No assets found for submission');

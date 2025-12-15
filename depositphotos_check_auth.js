@@ -7,7 +7,15 @@
         // Check for login form elements indicating not authenticated
         const loginForm = document.querySelector('.auth_login-form, .login-form, form[action*="login"]');
         const passwordField = document.querySelector('input[type="password"][name*="pass"], input[type="password"]');
-        const loginButton = document.querySelector('button[type="submit"]:has-text("Login"), .login-btn, .signin-btn');
+        const loginButtons = document.querySelectorAll('button[type="submit"], .login-btn, .signin-btn');
+        let loginButton = null;
+        for (var btnIdx = 0; btnIdx < loginButtons.length; btnIdx++) {
+            const btnText = loginButtons[btnIdx].textContent || '';
+            if (btnText.match(/login|sign\s*in/i)) {
+                loginButton = loginButtons[btnIdx];
+                break;
+            }
+        }
         
         // Check if user is not authenticated
         if (loginForm || (passwordField && loginButton)) {
