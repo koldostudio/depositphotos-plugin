@@ -1,0 +1,13 @@
+2025-12-16 19:02 - Usuario: Crea un archivo llamado conversation_log.txt en el repositorio koldostudio/depositphotos-plugin que contenga la conversación sostenida entre el usuario y yo en este formato: 
+
+Fecha/Hora - Emisor: Mensaje
+
+Ejemplo:
+2025-12-16 14:50 - Usuario: Por favor guárdame esta conversación
+2025-12-16 14:51 - Asistente: Claro, estoy trabajando en ello 
+
+Aquí está la conversación documentada:
+
+2025-12-16 - Usuario: ¿Cómo va mi plugin?
+2025-12-16 - Asistente: El desarrollo de tu plugin sigue en progreso. Estoy verificando continuamente que el proceso automatizado nos entregue todos los archivos correctos y funcionales para que puedas instalarlo manualmente sin inconvenientes...
+2025-12-16 - Usuario: Cómo va mi plugin?...
