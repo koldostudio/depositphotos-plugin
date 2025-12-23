@@ -2,26 +2,100 @@
     "modelGender": {
         "MALE": "male",
         "FEMALE": "female",
-        "OTHER": "other"
+        "NON_BINARY": "non-binary",
+        "OTHER": "other",
+        "UNKNOWN": "unknown"
     },
     "modelEthnicity": {
         "ASIAN": "asian",
         "AFRICAN": "african",
+        "AFRICAN_AMERICAN": "african_american",
         "CAUCASIAN": "caucasian",
         "LATIN": "latin",
+        "HISPANIC": "hispanic",
         "INDIAN": "indian",
         "MIDDLE_EASTERN": "middle_eastern",
+        "NATIVE_AMERICAN": "native_american",
+        "PACIFIC_ISLANDER": "pacific_islander",
         "MIXED": "mixed",
-        "OTHER": "other"
+        "OTHER": "other",
+        "UNKNOWN": "unknown"
+    },
+    "modelAge": {
+        "INFANT": "0-2",
+        "CHILD": "3-12",
+        "TEEN": "13-19",
+        "YOUNG_ADULT": "20-29",
+        "ADULT": "30-45",
+        "MIDDLE_AGED": "46-64",
+        "SENIOR": "65+"
     },
     "categories": {
         "abstract": "Abstract",
+        "animals": "Animals",
+        "architecture": "Architecture",
+        "arts": "Arts and Entertainment",
+        "backgrounds": "Backgrounds",
+        "beauty": "Beauty and Fashion",
+        "business": "Business",
+        "education": "Education",
+        "food": "Food and Drink",
+        "healthcare": "Healthcare and Medical",
+        "holidays": "Holidays",
+        "industrial": "Industrial",
         "nature": "Nature",
-        "technology": "Technology"
+        "people": "People",
+        "religion": "Religion",
+        "science": "Science",
+        "signs": "Signs and Symbols",
+        "sports": "Sports and Fitness",
+        "technology": "Technology",
+        "transportation": "Transportation",
+        "travel": "Travel"
+    },
+    "releaseStatus": {
+        "NOT_REQUIRED": "not_required",
+        "REQUIRED": "required",
+        "AVAILABLE": "available",
+        "NOT_AVAILABLE": "not_available"
+    },
+    "assetOrientation": {
+        "HORIZONTAL": "horizontal",
+        "VERTICAL": "vertical",
+        "SQUARE": "square",
+        "PANORAMIC": "panoramic"
     },
     "messages": {
         "titleNotSet": "Title is required.",
         "descriptionNotSet": "Description is required.",
-        "keywordsTooFew": "At least 5 keywords are required."
+        "keywordsTooFew": "At least 5 keywords are required.",
+        "emptyDestinationName": "Destination name cannot be empty. Please select a valid destination.",
+        "targetPageRequired": "Target page URL is required for submission.",
+        "uploadFailed": "File upload failed. Please check your connection and try again.",
+        "authenticationRequired": "Authentication is required. Please log in to continue.",
+        "metadataValidationFailed": "Metadata validation failed. Please check title, description, and keywords.",
+        "modelReleaseRequired": "Model release is required for images with recognizable people.",
+        "propertyReleaseRequired": "Property release may be required for private property.",
+        "invalidFileFormat": "Invalid file format. Please check supported formats.",
+        "fileSizeExceeded": "File size exceeds maximum allowed size.",
+        "networkError": "Network error occurred. Please check your connection.",
+        "unexpectedError": "An unexpected error occurred. Please try again."
+    },
+    "ftpSettings": {
+        "defaultHost": "ftp.depositphotos.com",
+        "defaultPort": 21,
+        "defaultPath": "/upload",
+        "passiveMode": true,
+        "secureConnection": false
+    },
+    "validationRules": {
+        "minTitleLength": 5,
+        "maxTitleLength": 200,
+        "minDescriptionLength": 10,
+        "maxDescriptionLength": 2000,
+        "minKeywords": 5,
+        "maxKeywords": 50,
+        "minKeywordLength": 2,
+        "maxKeywordLength": 50
     }
 }

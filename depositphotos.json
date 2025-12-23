@@ -115,19 +115,54 @@
                         "destination": "depositphotos"
                     },
                     "pins": {
-                        "next": "upload",
-                        "skip": "batch"
+                        "next": "uploadDecision",
+                        "skip": "submit"
+                    }
+                },
+                {
+                    "name": "uploadDecision",
+                    "type": "conditional",
+                    "title": {
+                        "@t": "Determine Upload Method"
+                    },
+                    "args": {
+                        "condition": "{properties.uploadViaFTP}"
+                    },
+                    "pins": {
+                        "true": "ftpUpload",
+                        "false": "upload"
+                    }
+                },
+                {
+                    "name": "ftpUpload",
+                    "type": "ftpUpload",
+                    "title": {
+                        "@t": "Uploading via FTP"
+                    },
+                    "args": {
+                        "destination": "depositphotos",
+                        "skipAlreadyUploaded": true,
+                        "passive": true,
+                        "retryAttempts": 3,
+                        "timeout": 300000
+                    },
+                    "pins": {
+                        "fail": "@fail",
+                        "cancel": "@cancel",
+                        "next": "submit"
                     }
                 },
                 {
                     "name": "upload",
                     "type": "upload",
                     "title": {
-                        "@t": "Uploading"
+                        "@t": "Uploading via API"
                     },
                     "args": {
+                        "destination": "depositphotos",
                         "skipAlreadyUploaded": true,
-                        "connection": "depositphotos"
+                        "connection": "depositphotos",
+                        "retryAttempts": 3
                     },
                     "pins": {
                         "fail": "@fail",
